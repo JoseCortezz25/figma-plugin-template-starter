@@ -12,11 +12,23 @@
     "isolatedModules": false,
     "noEmit": true,
     "jsx": "react-jsx",
-    "typeRoots": ["./node_modules/@figma"],
+    "typeRoots": [
+      "./node_modules/@figma"
+    ],
+    "baseUrl": ".",
     "paths": {
-      "@common/*": ["./src/common/*"],
-      "@ui/*": ["./src/ui/*"],
-      "@plugin/*": ["./src/plugin/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@common/*": [
+        "./src/common/*"
+      ],
+      "@ui/*": [
+        "./src/ui/*"
+      ],
+      "@plugin/*": [
+        "./src/plugin/*"
+      ]
     }
   },
   "include": [
