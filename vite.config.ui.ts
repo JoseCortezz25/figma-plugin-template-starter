@@ -4,10 +4,12 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 import react from "@vitejs/plugin-react";
 import richSvg from "vite-plugin-react-rich-svg";
 import postcssUrl from "postcss-url";
+import tailwindcss from '@tailwindcss/vite'
+
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), richSvg(), viteSingleFile()],
+  plugins: [react(), richSvg(), viteSingleFile(), tailwindcss()],
   root: path.resolve("src/ui"),
   build: {
     minify: mode === "production",
@@ -23,14 +25,10 @@ export default defineConfig(({ mode }) => ({
     postcss: {
       plugins: [postcssUrl({ url: "inline" })],
     },
-    preprocessorOptions: {
-      scss: {
-        api: "modern-compiler",
-      },
-    },
   },
   resolve: {
     alias: {
+      "@": path.resolve(__dirname, "./src"),
       "@common": path.resolve("src/common"),
       "@ui": path.resolve("src/ui"),
     },
